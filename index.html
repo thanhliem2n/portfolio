@@ -269,11 +269,27 @@
     /* ─── About ─── */
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: auto 1fr;
       gap: 48px;
-      align-items: start;
+      align-items: center;
     }
-    .about-text p { color: var(--text-secondary); margin-bottom: 16px; font-size: 1.02rem; }
+    .about-avatar {
+      text-align: center;
+    }
+    .about-avatar img {
+      max-width: 280px;
+      width: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      aspect-ratio: 1/1;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .about-avatar img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 40px var(--accent-glow);
+    }
+    .about-text p { color: var(--text-secondary); margin-bottom: 16px; font-size: 1.05rem; line-height: 1.7; }
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -661,7 +677,7 @@
               <a href="#experience" class="btn btn-outline">
                 View Experience
               </a>
-              <a href="CV/CV_NguyenThanhLiem.pdf" target="_blank" class="btn btn-outline" download>
+              <a href="assets/CV_NguyenThanhLiem.pdf" target="_blank" class="btn btn-outline" download>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Download CV
               </a>
@@ -687,40 +703,30 @@
     </section>
 
     <!-- ═══ About ═══ -->
-    <section class="section" id="about">
+    <section id="about" class="section">
       <div class="container">
         <div class="about-grid">
-          <div class="about-text">
-            <h2 class="section-title gradient-text">About Me</h2>
-            <p>
-              I'm a full-stack developer who thrives at the intersection of
-              backend architecture and user-facing product. Over the past 3+ years,
-              I've designed and built systems that handle <strong>220,000+ calls per day</strong>,
-              process financial data at scale, and empower field agents with mobile tools.
-            </p>
-            <p>
-              My approach is pragmatic — I care about clean code, meaningful automation,
-              and systems that just work. Outside of code, I explore DevOps practices,
-              experiment with new frameworks, and contribute to open-source projects.
-            </p>
-            <p>
-              Currently based in Ho Chi Minh City, open to remote and on-site roles.
-            </p>
+    
+          <!-- Avatar -->
+          <div class="about-avatar">
+            <img src="assets/avatar.jpg" alt="Nguyen Thanh Liem - Avatar">
           </div>
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="num">3+</div>
-              <div class="label">Years Exp.</div>
-            </div>
-            <div class="stat-card">
-              <div class="num">6</div>
-              <div class="label">Languages</div>
-            </div>
-            <div class="stat-card">
-              <div class="num">5</div>
-              <div class="label">Major Projects</div>
+    
+          <!-- About Text -->
+          <div>
+            <h2 class="section-title" style="margin-bottom: 12px;">About Me</h2>
+            <div class="about-text">
+              <p>
+                I'm a Full Stack Developer with over 3 years of experience building
+                scalable financial systems — from CRM platforms and call center automation
+                to document processing pipelines. I'm pretty calm under pressure and enjoy
+                working with teams to solve real problems. Outside of coding, I'm always
+                picking up new tools and technologies to stay sharp. My goal is simple:
+                write clean code, build useful things, and keep learning along the way.
+              </p>
             </div>
           </div>
+    
         </div>
       </div>
     </section>
@@ -856,8 +862,10 @@
             <div class="project-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
-            <h3>Box Tools Web</h3>
-            <div class="project-sub">boxtool.org</div>
+            <a href="https://boxtool.org/" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
+              <h3>Box Tools Web</h3>
+              <div class="project-sub">boxtool.org ✦</div>
+            </a>
             <p>
               A scalable web platform built with Next.js 14 (App Router), TypeScript,
               and Tailwind CSS. Features custom i18n system (VN/EN), dynamic imports
@@ -873,7 +881,7 @@
               <span>GitHub Actions</span>
             </div>
             <div class="project-links">
-              <a href="https://boxtool.org" target="_blank" rel="noopener">
+              <a href="https://boxtool.org/" target="_blank" rel="noopener">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
                 Live
               </a>
@@ -935,7 +943,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2024 Nguyen Thanh Liem. Built with intent.</p>
+      <p>&copy; 2024 Nguyen Thanh Liem</p>
     </div>
   </footer>
 
